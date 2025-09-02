@@ -4,7 +4,9 @@ function Form(props) {
     const [name, setName] = useState('');
     function handleSubmit(event) {
         event.preventDefault();
-        props.addTask(name);
+        const trimmed = name.trim();
+        if (!trimmed) return;
+        props.addTask(trimmed);
         setName("");
       }
 
@@ -25,10 +27,11 @@ function handleChange(event) {
           className="input input__lg"
           name="text"
           autoComplete="off"
+          required
           value={name}
           onChange={handleChange}
         />
-        <button type="submit" className="btn btn__primary btn__lg">
+        <button type="submit" className="btn btn__primary btn__lg" disabled={!name.trim()}>
           Add
         </button>
       </form>
