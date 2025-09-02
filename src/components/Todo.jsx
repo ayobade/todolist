@@ -10,7 +10,7 @@ function usePrevious(value) {
 
 function Todo(props) {
   const [isEditing, setIsEditing] = useState(false);
-  const [newName, setNewName] = useState("props.name");
+  const [newName, setNewName] = useState("");
   function handleChange(e) {
     setNewName(e.target.value);
   }
