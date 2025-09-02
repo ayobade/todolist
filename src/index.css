@@ -609,6 +609,13 @@ form {
   transform: scale(1) rotate(0deg);
 }
 
+.c-cb input[type="checkbox"]:checked + label {
+  color: var(--text-completed);
+  text-decoration: line-through;
+  text-decoration-color: var(--success);
+  text-decoration-thickness: 2px;
+}
+
 .c-cb input[type="checkbox"]:focus-visible + label:before {
   box-shadow: 0 0 0 3px var(--accent-glow);
 }
